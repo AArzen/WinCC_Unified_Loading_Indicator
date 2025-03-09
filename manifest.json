@@ -24,7 +24,7 @@
 					},
 					"LoadingColor": {
 						"$ref": "#/control/types/Color",
-						"default": 4279409726
+						"default": 4286294590
 					},
 					"LoadingSpeed": {
 						"type": "number",

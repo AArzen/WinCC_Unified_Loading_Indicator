@@ -12,6 +12,7 @@ function update() {
         if (size && !isNaN(size)) {
                 console.log("Set LoadingSize:", size);
                 loading.style.setProperty('--uib-size', size + 'px');
+                loading.style.setProperty('--dot-size', (size * 0.17) + 'px');
         } else {
                 console.warn("Value error LoadingSize:", size);
         }
