@@ -1,0 +1,125 @@
+{
+	"mver": "1.2.0",
+	"control": {
+		"identity": {
+			"name": "Button",
+			"version": "1.0",
+			"displayname": "Button",
+			"icon": "./assets/favicon.ico",
+			"type": "guid://44524BE9-22A9-4B39-96C2-5600BC573ED8",
+			"start": "./control/index.html"
+		},
+		"environment": {
+			"extensions": {
+				"HMI": {
+					"mandatory": true,
+					"version": "~1.0.0"
+				}
+			}
+		},
+		"metadata": {
+			"author": "Fabio",
+			"keywords": []
+		},
+		"contracts": {
+			"api": {
+				"methods": {},
+				"events": {
+					"onClick": {
+						"arguments": {
+							"onClick": {
+								"type": "boolean"
+							}
+						}
+					},
+					"onDown": {
+						"arguments": {
+							"onDown": {
+								"type": "boolean"
+							}
+						}
+					},
+					"onUp": {
+						"arguments": {
+							"onUp": {
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				"properties": {
+					"Button_Width": {
+						"type": "number",
+						"default": 100
+					},
+					"Button_Height": {
+						"type": "number",
+						"default": 50
+					},
+					"Pressed_BackgroundColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4279409728
+					},
+					"Pressed_BorderColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4279409728
+					},
+					"Pressed_BorderSize": {
+						"type": "number",
+						"default": 3
+					},
+					"Pressed_Radius": {
+						"type": "number",
+						"default": 25
+					},
+					"Pressed_Text": {
+						"type": "string",
+						"default": "text"
+					},
+					"Pressed_TextSize": {
+						"type": "number",
+						"default": 20
+					},
+					"Pressed_TextColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4294967295
+					},
+					"Released_BackgroundColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4279409728
+					},
+					"Released_BorderColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4279409728
+					},
+					"Released_BorderSize": {
+						"type": "number",
+						"default": 3
+					},
+					"Released_Radius": {
+						"type": "number",
+						"default": 25
+					},
+					"Released_Text": {
+						"type": "string",
+						"default": "text"
+					},
+					"Released_TextSize": {
+						"type": "number",
+						"default": 20
+					},
+					"Released_TextColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4294967295
+					}
+				}
+			}
+		},
+		"types": {
+			"Color": {
+				"$id": "http://tia.siemens.com/wincc-unified/types/s/color",
+				"type": "number"
+			}
+		}
+	}
+}

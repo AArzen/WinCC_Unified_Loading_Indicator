@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset='utf-8'>
+	<script src='./js/webcc.min.js'></script>
+	<script src='./js/updateGraphics.js'></script>
+</head>
+
+<body>
+	<svg id="button" xmlns="http://www.w3.org/2000/svg" width="200" height="100" onclick="onClick()" onmousedown="onDown()" onmouseup="onUp()">
+		<g width="100%" height="100%">
+			<rect id="border" x="0" y="0" width="100%" height="100%" rx="22.5" fill="#129c40" />
+			<rect id="internal" x="0" y="0" width="100%" height="100%" rx="22.5" fill="#129c40" />
+			<text id="text" fill="#fff" font-size="24" font-family="ArialMT, Arial" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">SI</text>
+		</g>
+	</svg>
+
+	<script>
+		// Initialize the custom control (without a successful initialization, the CWC will remain empty. Make sure to include the webcc.min.js script!)
+		WebCC.start(
+			// callback function; occurs when the connection is done or failed. 
+			// "result" is a boolean defining if the connection was successfull or not.
+			function (result) {
+				if (result) {
+					console.log('connected successfully');
+					// Subscribe for future value changes
+					update();
+					WebCC.onPropertyChanged.subscribe(update);
+				}
+				else {
+					console.log('connection failed');
+				}
+			},
+			// contract (see also manifest.json)
+			{
+				// Methods
+				methods: {},
+				// Events
+				events: ["onClick", "onDown", "onUp"],
+				// Properties
+				properties: {
+					Button_Width: 100,
+					Button_Height: 50,
+					Pressed_BackgroundColor: 4279409728,
+					Pressed_BorderColor: 4279409728,
+					Pressed_BorderSize: 3,
+					Pressed_Radius: 25,
+					Pressed_Text: "text",
+					Pressed_TextSize: 20,
+					Pressed_TextColor: 4294967295,
+					Released_BackgroundColor: 4279409728,
+					Released_BorderColor: 4279409728,
+					Released_BorderSize: 3,
+					Released_Radius: 25,
+					Released_Text: "text",
+					Released_TextSize: 20,
+					Released_TextColor: 4294967295
+				}
+			},
+			// placeholder to include additional Unified dependencies (not used in this example)
+			[],
+			// connection timeout
+			10000
+		);
+
+		function onClick() {
+			WebCC.Events.fire("onClick");
+		}
+		function onDown() {
+			WebCC.Events.fire("onDown");
+			pressed();
+		}
+		function onUp() {
+			WebCC.Events.fire("onUp");
+			released();
+		}
+	</script>
+</body>
+
+</html>
