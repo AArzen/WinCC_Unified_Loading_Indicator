@@ -1,0 +1,43 @@
+{
+	"mver": "1.2.0",
+	"control": {
+		"identity": {
+			"name": "Loading",
+			"version": "1.0",
+			"displayname": "Loading",
+			"icon": "./assets/loading.ico",
+			"type": "guid://B8D6D179-EFC4-41F9-8AD0-81943B1DE5A4",
+			"start": "./control/index.html"
+		},
+		"metadata": {
+			"author": "AArzen",
+			"keywords": []
+		},
+		"contracts": {
+			"api": {
+				"methods": {},
+				"events": {},
+				"properties": {
+					"LoadingSize": {
+						"type": "number",
+						"default": 40
+					},
+					"LoadingColor": {
+						"$ref": "#/control/types/Color",
+						"default": 4279409726
+					},
+					"LoadingSpeed": {
+						"type": "number",
+						"default": 2.0
+					}
+				}
+			}
+		},
+		"types": {
+			"Color": {
+				"$id": "http://tia.siemens.com/wincc-unified/types/s/color",
+				"type": "number"
+			}
+		}
+	}
+}

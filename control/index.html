@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Loading</title>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/webcc.min.js"></script>
+    <script src="./js/updateGraphics.js" defer></script> <!-- defer - load script before call -->
+</head>
+
+<body>
+    <div id="loading" class="container">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <script>
+        ////////////////////////////////////////////
+        // Initialize the custom control
+        WebCC.start(
+            function (result) {
+                if (result) {
+                    console.log("connected successfully");
+                    update();
+                    WebCC.onPropertyChanged.subscribe(update);
+                } else {
+                    console.log("connection failed");
+                }
+            },
+            // contract
+            {
+                methods: {},
+                events: {},
+                properties: {
+                    LoadingSize: 40,
+                    LoadingColor: 4279409726,
+                    LoadingSpeed: 2.0,
+                }
+            },
+            // extensions
+            [],
+            // timeout
+            10000
+        );    
+    </script>
+</body>
+
+</html>
