@@ -26,3 +26,4 @@ You can easily modify the following properties in your WinCC Unified environment
 ## Example Integration
 
 After adding the ZIP file to the `customControl` directory, the control will be available for integration into your WinCC Unified screens. Customize the properties and behavior as per your project’s requirements.
+
