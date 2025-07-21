@@ -5,7 +5,7 @@
 			"name": "Loading",
 			"version": "1.0",
 			"displayname": "Loading",
-			"icon": "./assets/loading.ico",
+			"icon": "./assets/loading.png",
 			"type": "guid://B8D6D179-EFC4-41F9-8AD0-81943B1DE5A4",
 			"start": "./control/index.html"
 		},

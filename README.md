@@ -1,6 +1,6 @@
 # WinCC_Unified_Loading_Indicator
 
-![Loading Icon](./assets/loading.ico)
+![Loading Icon](./assets/loading.png)
 
 This custom loading animation icon allows you to easily integrate a dynamic and customizable loading indicator into your WinCC Unified projects. The loading icon is fully adjustable with the following dynamic properties:
 
